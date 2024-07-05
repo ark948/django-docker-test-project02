@@ -33,7 +33,7 @@
 > docker-compose exec web python manage.py createsuperuser
 - admin-admin@example.com-1
 - check
-- add some tests for user model in accounts/tests.py
+- add some tests for user model in accounts/tests.py (should be 2 tests now)
 > docker-compose exec web python manage.py test
 
 - setup is complete
@@ -45,3 +45,5 @@
 - home.html will inherit from _base.html
 - re-write index view to class based generic view
 - restart the containers (any change in settings.py requires restart)
+- add tests for home page in pages/tests.py (should be 4 tests now)
+> docker-compose exec web python manage.py test
