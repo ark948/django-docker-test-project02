@@ -33,3 +33,5 @@
 > docker-compose exec web python manage.py createsuperuser
 - admin-admin@example.com-1
 - check
+- add some tests for user model in accounts/tests.py
+> docker-compose exec web python manage.py test
