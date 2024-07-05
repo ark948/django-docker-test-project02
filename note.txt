@@ -25,3 +25,11 @@
 - add pages app
 - add pages app to installed_apps
 - add index view to pages app
+- add forms.py to accounts app
+- in it, add two forms: CustomUserCreationForm and CustomUserChangeForm
+- since we have a custom user model, admin user must also inherit from it
+- update accounts/admin.py
+- create a superuser
+> docker-compose exec web python manage.py createsuperuser
+- admin-admin@example.com-1
+- check

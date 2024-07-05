@@ -1,0 +1,2 @@
+full login system with email/password instead of username/password and vice versa
+functional email backend
