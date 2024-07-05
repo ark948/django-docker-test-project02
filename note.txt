@@ -35,3 +35,13 @@
 - check
 - add some tests for user model in accounts/tests.py
 > docker-compose exec web python manage.py test
+
+- setup is complete
+
+- adding templates
+- update the TEMPLATES var in settings.py
+- add _base.html to templates dir
+- add home.html to pages folder (which goes inside templates directory)
+- home.html will inherit from _base.html
+- re-write index view to class based generic view
+- restart the containers (any change in settings.py requires restart)
