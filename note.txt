@@ -1,0 +1,27 @@
+- setup
+- cmd> python -m venv venv
+- cmd> venv\Scripts\activate
+- venv> this will be omitted for brevity
+> git init
+> add .gitignore
+> git add .
+> git commit -m "base commit"
+- add Dockerfile
+- add .dockerignore
+- add docker-compose.yml
+- move whl files to whl folder
+- in django settings.py, switch to postgresql
+> docker-compose up -d --build
+- navigate to 127.0.0.1:8000 to see django welcome page
+- add accounts app (so later custom user model can be added to it)
+> docker-compose exec web python manage.py startapp accounts
+- add custom user model to accounts/models.py
+- add accounts app to installed_apps
+- add AUTH_USER_MODEL to settings.py
+- make migrations for accounts app
+> docker-compose exec web python manage.py makemigrations accounts
+- run migrations
+> docker-compose exec web python manage.py migrate
+- add pages app
+- add pages app to installed_apps
+- add index view to pages app
