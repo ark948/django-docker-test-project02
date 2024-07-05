@@ -45,5 +45,5 @@
 - home.html will inherit from _base.html
 - re-write index view to class based generic view
 - restart the containers (any change in settings.py requires restart)
-- add tests for home page in pages/tests.py (should be 4 tests now)
+- add tests for home page in pages/tests.py (should be 5 tests now)
 > docker-compose exec web python manage.py test
