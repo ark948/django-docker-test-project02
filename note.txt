@@ -90,3 +90,11 @@
 - set STATICFILES_STORAGE in settnigs.py
 - now run the collect static command
 > docker-compose exec web python manage.py collectstatic
+
+
+- ADDING BOOTSTRAP
+- I'm going to skip this part, stil not sure whether to use bootstrap or tailwind
+- although navbar should be added at this point
+- move login, logout and signup links to base and remove them from home
+- add about page (nothing special) and some tests for it
+- should be 15 tests
