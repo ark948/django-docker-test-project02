@@ -1,4 +1,4 @@
-- setup
+- SETUP
 - cmd> python -m venv venv
 - cmd> venv\Scripts\activate
 - venv> this will be omitted for brevity
@@ -36,7 +36,7 @@
 - add some tests for user model in accounts/tests.py (should be 2 tests now)
 > docker-compose exec web python manage.py test
 
-- setup is complete
+- SETUP IS COMPLETE
 
 - adding templates
 - update the TEMPLATES var in settings.py
@@ -47,3 +47,22 @@
 - restart the containers (any change in settings.py requires restart)
 - add tests for home page in pages/tests.py (should be 5 tests now)
 > docker-compose exec web python manage.py test
+
+
+- ADDING BASIC AUTHENTICATION (and later advanced authentication)
+- login, logout, sign up
+- login and logout using django's auth app
+- sign up requires more, since no built in solution available
+- to use auth app, explicitly include in main urls.py file (prefix it with accounts app - common)
+- add links for login and logout to home.html template
+> mkdir templates/registration
+- add login.html to templates/registration
+- add LOGIN_REDIRECT_URL to settings.py
+- add LOGOUT_REDIRECT_URL to settings.py
+- update home.html to include a logout (as of django 5, logout must be form-post)
+- to add signup:
+- add a urls.py file to accounts, and add a route for sign up to it
+- include the accounts urls.py file in main urls.py file BELOW the built in auth path
+- add sign up view to accounts/views.py
+- add signup.html to templates/registration folder
+- update home.html to include a link to sign up page
