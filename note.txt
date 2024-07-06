@@ -66,3 +66,4 @@
 - add sign up view to accounts/views.py
 - add signup.html to templates/registration folder
 - update home.html to include a link to sign up page
+- add test for signup page (template, html content, which form was used, url and if view name resolved)
