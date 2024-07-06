@@ -18,12 +18,16 @@ COPY ./whl/sqlparse-0.5.0-py3-none-any.whl ./whl
 COPY ./whl/tzdata-2024.1-py2.py3-none-any.whl ./whl
 COPY ./whl/Django-5.0.6-py3-none-any.whl ./whl
 COPY ./whl/psycopg2_binary-2.9.9-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl ./whl
+COPY ./whl/django_crispy_forms-2.2-py3-none-any.whl ./whl
+COPY ./whl/crispy_bootstrap5-2024.2-py3-none-any.whl ./whl
 RUN pip install ./whl/typing_extensions-4.12.2-py3-none-any.whl
 RUN pip install ./whl/asgiref-3.8.1-py3-none-any.whl
 RUN pip install ./whl/sqlparse-0.5.0-py3-none-any.whl
 RUN pip install ./whl/tzdata-2024.1-py2.py3-none-any.whl
 RUN pip install ./whl/Django-5.0.6-py3-none-any.whl
 RUN pip install ./whl/psycopg2_binary-2.9.9-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+RUN pip install ./whl/django_crispy_forms-2.2-py3-none-any.whl
+RUN pip install ./whl/crispy_bootstrap5-2024.2-py3-none-any.whl
 RUN pip freeze > requirements.txt
 
 # copy project

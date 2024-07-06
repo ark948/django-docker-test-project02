@@ -98,3 +98,27 @@
 - move login, logout and signup links to base and remove them from home
 - add about page (nothing special) and some tests for it
 - should be 15 tests
+- ADDING django-cripsy-forms (not the bootstrap template pack - cripsy-bootstrap5 - maybe later)
+- requires: nothing
+- update Dockerfile
+- rebuild the image
+> docker-compose down
+> docker-compose up -d --build
+- add it to installed_apps (the name should be "crispy_forms")
+- edit signup html page to use cripsy forms (include load tag and form tag)
+- check the signup page (result: not sure if it worked)
+- MISTAKE detected: using the old version of django_crispy_forms
+- updating right now
+- the forms are not displaying any improvements, maybe because of no css framework thing
+- i will install django_crispy_forms and skip template pack (i'll come back later)
+- for now, just install it
+- upon navigating to a page with crispy tag used...
+- error: Settings object has no attribute CRISPY_TEMPLATE_PACK
+- i will attempt to add this with value of None
+- not working, no luck in finding a similar issue online
+- perhaps this package just needs a ui library to work
+- i'm going to try adding crispy-bootstrap5 without actually having bootstrap5
+- just to get around this issue
+- the signup page that is using the crispy tag is loading fine...
+- but signup form has no visual improvement
+- for the sake of consistency, i will add to the login form as well and move on
