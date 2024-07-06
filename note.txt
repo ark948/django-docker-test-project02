@@ -67,3 +67,26 @@
 - add signup.html to templates/registration folder
 - update home.html to include a link to sign up page
 - add test for signup page (template, html content, which form was used, url and if view name resolved)
+- BASIC AUTHENTICATION DONE
+
+
+- STATIC ASSETS
+- create a project level static directory and in it, css, js and images folder
+> mkdir static
+- add base.css to static/css
+- base.js to static/js
+- and .keep file to static/images folder
+- add STATICFILES_DIRS to settings.py (django's builtin staticfiles app will use this)
+- to test if base.css was loaded correctly add a simple ruleset to it
+- update the base.html to include a link to base.css and bace.js
+- also include the load static tag in base.html
+- include the load static app in home.html as well and load a sample logo pic
+- add a simple console message to base.js to check if it was loaded (inlude it in base.html)
+- check chrome's console for this
+- Configuring collectstatic command
+- this command combines all static files to be sent in one request (instead of a request for each)
+- add STATIC_ROOT to settings.py
+- next, explicitly declare the file storage engine that django will use to colect static files
+- set STATICFILES_STORAGE in settnigs.py
+- now run the collect static command
+> docker-compose exec web python manage.py collectstatic
