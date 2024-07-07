@@ -168,3 +168,15 @@
 - accounts/tests.py needs to be updated after adding django-allauth
 - run tests again (14 tests)
 - skipped adding social authentication
+
+- Trying to add a UI library
+- choices: Bootstrap5, Tailwind, Bulma, Simple.css and others (HTMX, Apline)
+- trying out simple.css 01
+- downloaded simple.css main css file and moved it to static/css
+- updated the base.html according to the doc of simple.css
+- switching the link of base.css in base.html to use simple.css instead of base.css
+- ok, not terrible, but not good either
+- removing the logo
+- actually, it's ok
+- i'm going to try tailwind now, but simple.css remains here as an option
+- before doing that i will commit to git, in case everything went haywire

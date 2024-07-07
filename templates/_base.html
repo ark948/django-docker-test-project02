@@ -2,15 +2,16 @@
 <!DOCTYPE html>
 <html dir="rtl">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Blog{% endblock title %}</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/simple.css' %}">
     </head>
     <body>
         <section>
             <header>
-                <img class="pngcover" src="{% static 'images/tri.png' %}">
+                <!-- <img class="pngcover" src="{% static 'images/tri.png' %}"> -->
             </header>
         </section>
         <nav>
@@ -26,10 +27,17 @@
                 <li><a href="{% url 'pages:about' %}">درباره ما</a></li>
             </ul>
         </nav>
-        <div class="container">
-            {% block content %}
-            {% endblock content %}
-        </div>
+        <section class="container">
+            <main>
+                {% block content %}
+                {% endblock content %}
+            </main>
+        </section>
+        <section class="footer">
+            <footer>
+                <p>My website's footer</p>
+            </footer>
+        </section>
         <!-- JS -->
         <script src="{% static 'js/base.js' %}"></script>
     </body>
