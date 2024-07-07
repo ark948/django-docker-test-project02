@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.sites",  # needed for allauth
 
     "crispy_forms",
     "crispy_bootstrap5",
+    "allauth",  # needed for allauth
+    "allauth.account",  # needed for allauth
 
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
@@ -55,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware', # django-allauth
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -136,6 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "pages:index"
 LOGOUT_REDIRECT_URL = "pages:index"
+ACCOUNT_LOGOUT_REDIRECT = "pages:index" # django-allauth
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -143,3 +148,20 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+SITE_ID = 1  # needed for allauth
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",  # django-allauth
+)
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+ACCOUNT_SESSION_REMEMBER = None # django-allauth
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+
+# email only login
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True

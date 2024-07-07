@@ -122,3 +122,46 @@
 - the signup page that is using the crispy tag is loading fine...
 - but signup form has no visual improvement
 - for the sake of consistency, i will add to the login form as well and move on
+
+
+- ADVANCED AUTHENTICATION
+- package to install: django-allauth
+- requirements (in order): PyJWT, defusedxml, python3_openid, certifi, charset_normalizer, idna
+- urllib3, requests, oauthlib, requests_oauthlib, pycparser, cffi, cryptography
+- finally django-allauth
+- new requirement discovered while trying to install django-allauth, setuptools>=40
+- downloaded and included it in Dockerfile, still the same error
+- IMPORTANT
+- the only way to install django-allauth (that worked for me) was to build wheel file for it first
+- whl file must be built using python wheel package and django allauth's tar.gz file
+- after the whl file was generated, it can be installed like any other whl file
+- django-allauth requires to be added to installed_apps
+- SITE_ID must be added as well
+- also django.contrib.sites must be added to installed_apps as well
+- authentication backends needs to be updated (this config var is actually hidden in settnigs.py)
+- allauth authentication backend needs to be added to django's authentication backend (explicitly)
+- this and site_id should go to the bottom of settings.py
+- next an email server must be explicitly added to settings.py (for now, i'll use console)
+- next is ACCOUNT_LOGOUT_REDIRECT for allauth that will overwrite the LOGOUT_REDIRECT_URL
+- it's best to explicitly set it as well
+> docker-compose exec web python manage.py migrate
+- error: allauth middleware must be added to MIDDLEWEARE config var
+- adding it now, running migrate again
+- ok
+- next, replacing default auth app urls with allauth urls (still in accounts app)
+- in main urls.py, remove django.contrib.auth.urls
+- add allauth.urls in its place
+- since allauth already has signup view and route, accounts app urls can be deleted as well
+- at this point, accounts/urls.py and accounts/views.py can be deleted as well
+- because they were only added for signup feature (i won't do it though, yet)
+- now templates, allauth looks for templates in templates/account directory
+- mkdir templates/account (NOTICE it is account not accounts)
+- move login.html and signup.html to it
+- last step, update base template to point to allauth routes instead of auth or accounts signup
+- add account_ prefix to login and logout and signup
+- we can remove the remember_me feature by adding ACCOUNT_SESSION_REMEMBER to settings.py
+- add intermediary logout page to templates/account/ logout.html
+- check if everything works correctly
+- PROBLEM 01: intermediary logout page not displaying
+- to make signup page only ask for password once, add ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False (ok)
+- to add email only login (instead of username) add four config vars to settings.py

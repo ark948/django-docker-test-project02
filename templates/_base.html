@@ -18,15 +18,15 @@
                 {% if user.is_authenticated %}
                 <li>سلام {{ user.email }}</li>
                 <li>
-                    <form method="post" action="{% url 'logout' %}">
+                    <form method="post" action="{% url 'account_logout' %}">
                         {% csrf_token %}
                         <button type="submit">خروج</button>
                     </form>
                 </li>
                 {% else %}
                     <li>شما وارد نشده اید</li>
-                    <li><a href="{% url 'login' %}">ورود</a></li>
-                    <li><a href="{% url 'accounts:signup' %}">ثبت نام</a></li>
+                    <li><a href="{% url 'account_login' %}">ورود</a></li>
+                    <li><a href="{% url 'account_signup' %}">ثبت نام</a></li>
                 {% endif %}
                 <li><a href="{% url 'pages:about' %}">درباره ما</a></li>
             </ul>
