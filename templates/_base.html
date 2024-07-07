@@ -17,12 +17,7 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li>سلام {{ user.email }}</li>
-                <li>
-                    <form method="post" action="{% url 'account_logout' %}">
-                        {% csrf_token %}
-                        <button type="submit">خروج</button>
-                    </form>
-                </li>
+                <li><a href="{% url 'account_logout' %}">خروچ</a></li>
                 {% else %}
                     <li>شما وارد نشده اید</li>
                     <li><a href="{% url 'account_login' %}">ورود</a></li>

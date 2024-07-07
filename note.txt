@@ -162,6 +162,6 @@
 - we can remove the remember_me feature by adding ACCOUNT_SESSION_REMEMBER to settings.py
 - add intermediary logout page to templates/account/ logout.html
 - check if everything works correctly
-- PROBLEM 01: intermediary logout page not displaying
+- PROBLEM 01: intermediary logout page not displaying => FIXED
 - to make signup page only ask for password once, add ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False (ok)
 - to add email only login (instead of username) add four config vars to settings.py
