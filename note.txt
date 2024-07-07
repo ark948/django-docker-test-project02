@@ -165,3 +165,6 @@
 - PROBLEM 01: intermediary logout page not displaying => FIXED
 - to make signup page only ask for password once, add ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False (ok)
 - to add email only login (instead of username) add four config vars to settings.py
+- accounts/tests.py needs to be updated after adding django-allauth
+- run tests again (14 tests)
+- skipped adding social authentication
