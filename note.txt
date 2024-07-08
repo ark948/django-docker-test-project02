@@ -180,3 +180,25 @@
 - actually, it's ok
 - i'm going to try tailwind now, but simple.css remains here as an option
 - before doing that i will commit to git, in case everything went haywire
+- problem: unfamiliar with node, npm, and how these two go together
+- for now i'll just go with simple.css
+
+
+- ADDING ENVIRONMENT VARIABLES
+- installing python_dotenv, packaging, marshmallow, enivorns, dj_database_url
+- and env stuff to the top of settings.py
+- move SECRET_KEY from settings.py to docker-compose.yml
+- (notice: if SECRET_KEY has a dollar sign, add another dollar sign to it)
+- this SECRET_KEY is still visible in source control
+- in actuality, we will add this to docker-compose-prod.yml and add this file to gitignore
+- restart container
+- next DEBUG and ALLOWED_HOSTS
+- when debug is set to false, it requires list of allowed hosts
+- set DEBUG to false and ALLOWED_HOSTS
+- move DEBUG to docker-compose.yml
+- next comes DATABASE (dj-database-url packages neest to be installed for this)
+- set the DATABASES config var in settings.py (DO NOT CHANGE)
+- book uses Heroku, the variable mentioned in book (DATABASE_URL) will be provided by Heroku
+- so i will not change it
+- right now, DATABASE config var is pointing to 'db' service in docker-compose which is good
+- commit

@@ -7,11 +7,21 @@
         <title>{% block title %}Blog{% endblock title %}</title>
         <!-- CSS -->
         <link rel="stylesheet" href="{% static 'css/simple.css' %}">
+        <style>
+            nav li {
+                display: inline-block;
+                margin: 40px
+            }
+            
+            .homelink {
+                text-decoration: none;
+            }
+        </style>
     </head>
     <body>
         <section>
             <header>
-                <!-- <img class="pngcover" src="{% static 'images/tri.png' %}"> -->
+                <a class="homelink" href="{% url 'pages:index' %}"><h1>وبلاگ من</h1></a>
             </header>
         </section>
         <nav>

@@ -36,6 +36,11 @@ COPY ./whl/cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl ./whl
 COPY ./whl/setuptools-70.2.0-py3-none-any.whl ./whl
 COPY ./whl/wheel-0.43.0-py3-none-any.whl ./whl
 COPY ./whl/django_allauth-0.63.3-py3-none-any.whl ./whl
+COPY ./whl/python_dotenv-1.0.1-py3-none-any.whl ./whl
+COPY ./whl/packaging-24.1-py3-none-any.whl ./whl
+COPY ./whl/marshmallow-3.21.3-py3-none-any.whl ./whl
+COPY ./whl/environs-11.0.0-py3-none-any.whl ./whl
+COPY ./whl/dj_database_url-2.2.0-py3-none-any.whl ./whl
 RUN pip install ./whl/typing_extensions-4.12.2-py3-none-any.whl
 RUN pip install ./whl/asgiref-3.8.1-py3-none-any.whl
 RUN pip install ./whl/sqlparse-0.5.0-py3-none-any.whl
@@ -60,6 +65,11 @@ RUN pip install ./whl/cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl
 RUN pip install ./whl/setuptools-70.2.0-py3-none-any.whl
 RUN pip install ./whl/wheel-0.43.0-py3-none-any.whl
 RUN pip install ./whl/django_allauth-0.63.3-py3-none-any.whl
+RUN pip install ./whl/python_dotenv-1.0.1-py3-none-any.whl
+RUN pip install ./whl/packaging-24.1-py3-none-any.whl
+RUN pip install ./whl/marshmallow-3.21.3-py3-none-any.whl
+RUN pip install ./whl/environs-11.0.0-py3-none-any.whl
+RUN pip install ./whl/dj_database_url-2.2.0-py3-none-any.whl
 RUN pip freeze > requirements.txt
 
 # copy project
