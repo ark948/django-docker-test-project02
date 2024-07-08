@@ -41,6 +41,29 @@ COPY ./whl/packaging-24.1-py3-none-any.whl ./whl
 COPY ./whl/marshmallow-3.21.3-py3-none-any.whl ./whl
 COPY ./whl/environs-11.0.0-py3-none-any.whl ./whl
 COPY ./whl/dj_database_url-2.2.0-py3-none-any.whl ./whl
+# wagtail
+COPY ./whl/pytz-2024.1-py2.py3-none-any.whl ./whl
+COPY ./whl/django_modelcluster-6.3-py2.py3-none-any.whl ./whl
+COPY ./whl/django_permissionedforms-0.1-py2.py3-none-any.whl ./whl
+COPY ./whl/django_taggit-5.0.1-py3-none-any.whl ./whl
+COPY ./whl/django_treebeard-4.7.1-py3-none-any.whl ./whl
+COPY ./whl/djangorestframework-3.15.2-py3-none-any.whl ./whl
+COPY ./whl/django_filter-24.2-py3-none-any.whl ./whl
+COPY ./whl/draftjs_exporter-5.0.0-py3-none-any.whl ./whl
+COPY ./whl/pillow-10.3.0-cp310-cp310-manylinux_2_28_x86_64.whl ./whl
+COPY ./whl/soupsieve-2.5-py3-none-any.whl ./whl
+COPY ./whl/beautifulsoup4-4.12.3-py3-none-any.whl ./whl
+COPY ./whl/filetype-1.2.0-py2.py3-none-any.whl ./whl
+COPY ./whl/willow-1.8.0-py3-none-any.whl ./whl
+COPY ./whl/six-1.16.0-py2.py3-none-any.whl ./whl
+COPY ./whl/l18n-2021.3-py3-none-any.whl ./whl
+COPY ./whl/et_xmlfile-1.1.0-py3-none-any.whl ./whl
+COPY ./whl/openpyxl-3.1.5-py2.py3-none-any.whl ./whl
+COPY ./whl/anyascii-0.3.2-py3-none-any.whl ./whl
+COPY ./whl/telepath-0.3.1-py38-none-any.whl ./whl
+COPY ./whl/laces-0.1.1-py3-none-any.whl ./whl
+COPY ./whl/pillow_heif-0.17.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl ./whl
+COPY ./whl/wagtail-6.1.2-py3-none-any.whl ./whl
 RUN pip install ./whl/typing_extensions-4.12.2-py3-none-any.whl
 RUN pip install ./whl/asgiref-3.8.1-py3-none-any.whl
 RUN pip install ./whl/sqlparse-0.5.0-py3-none-any.whl
@@ -70,6 +93,28 @@ RUN pip install ./whl/packaging-24.1-py3-none-any.whl
 RUN pip install ./whl/marshmallow-3.21.3-py3-none-any.whl
 RUN pip install ./whl/environs-11.0.0-py3-none-any.whl
 RUN pip install ./whl/dj_database_url-2.2.0-py3-none-any.whl
+RUN pip install ./whl/pytz-2024.1-py2.py3-none-any.whl
+RUN pip install ./whl/django_modelcluster-6.3-py2.py3-none-any.whl
+RUN pip install ./whl/django_permissionedforms-0.1-py2.py3-none-any.whl
+RUN pip install ./whl/django_taggit-5.0.1-py3-none-any.whl
+RUN pip install ./whl/django_treebeard-4.7.1-py3-none-any.whl
+RUN pip install ./whl/djangorestframework-3.15.2-py3-none-any.whl
+RUN pip install ./whl/django_filter-24.2-py3-none-any.whl
+RUN pip install ./whl/draftjs_exporter-5.0.0-py3-none-any.whl
+RUN pip install ./whl/pillow-10.3.0-cp310-cp310-manylinux_2_28_x86_64.whl
+RUN pip install ./whl/soupsieve-2.5-py3-none-any.whl
+RUN pip install ./whl/beautifulsoup4-4.12.3-py3-none-any.whl
+RUN pip install ./whl/filetype-1.2.0-py2.py3-none-any.whl
+RUN pip install ./whl/willow-1.8.0-py3-none-any.whl
+RUN pip install ./whl/six-1.16.0-py2.py3-none-any.whl
+RUN pip install ./whl/l18n-2021.3-py3-none-any.whl
+RUN pip install ./whl/et_xmlfile-1.1.0-py3-none-any.whl
+RUN pip install ./whl/openpyxl-3.1.5-py2.py3-none-any.whl
+RUN pip install ./whl/anyascii-0.3.2-py3-none-any.whl
+RUN pip install ./whl/telepath-0.3.1-py38-none-any.whl
+RUN pip install ./whl/laces-0.1.1-py3-none-any.whl
+RUN pip install ./whl/pillow_heif-0.17.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+RUN pip install ./whl/wagtail-6.1.2-py3-none-any.whl
 RUN pip freeze > requirements.txt
 
 # copy project

@@ -233,3 +233,38 @@
 - there was an extra slash
 - removing it fixed the problem
 - commiting
+
+
+- ADDING wagtail (MAIN FUNCTION)
+- GOAL: to use wagtail as blogging platform
+- users must be able to sign up, confirm their email
+- create new blogs with editing features and hashtags
+- explore blogs and search among them by hashtag or author
+- follow authors
+- comment on blogs
+- added all whl files
+- attempting to build image - done
+- adding apps to installed_apps
+- and a middlware
+- and STATIC_ROOT (already there)
+- and MEDIA_ROOT and MEDIA_URL
+- add wagtail site name
+- and wagtail admin base (don't exactly know what this is)
+- apparently this is not required but recommended
+- and wagtail extensions
+- now edit the urls.py 
+- configure django to serve user uploaded files at the end of urls.py
+- after these settings, migrate command must be ran to create wagtail database tables
+- attempting to run migrate command
+> docker-compose exec web python manage.py migrate
+- CRAP, forgot to install wagtail package itself
+- need to rebuild the image
+- attempting run migrate again - ok
+- restarting containers
+- OK, cms, and pages working, but documents/ raises 404
+- found a project called puput, which is a wagtail based blog app
+- it even has a tutorial on how to install it as a standalone blog app
+- exactly what i had in mind
+- i'm going to use them both
+- i will move wagtail itself to wagtail-blog url and puput to puput-blog url
+- this note file is getting long and impractical (CLEAN LATER)

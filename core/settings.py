@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from environs import Env
+import os
 
 env = Env()
 env.read_env()
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =  env("DJANGO_SECRET_KEY")
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG")
@@ -47,7 +48,23 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "allauth",  # needed for allauth
     "allauth.account",  # needed for allauth
+    # Wagtail
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
 
+    'modelcluster',
+    'taggit',
+
+    # local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
 ]
@@ -62,7 +79,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware', # django-allauth
+    'allauth.account.middleware.AccountMiddleware',  # django-allauth
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware', # wagtail
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -145,7 +163,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "pages:index"
 LOGOUT_REDIRECT_URL = "pages:index"
 SIGNUP_REDIRECT_URL = "pages:index"
-ACCOUNT_LOGOUT_REDIRECT = "pages:index" # django-allauth
+ACCOUNT_LOGOUT_REDIRECT = "pages:index"  # django-allauth
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -162,7 +180,7 @@ AUTHENTICATION_BACKENDS = (
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-ACCOUNT_SESSION_REMEMBER = None # django-allauth
+ACCOUNT_SESSION_REMEMBER = None  # django-allauth
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
 # email only login
@@ -172,3 +190,11 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 DEFAULT_FROM_EMAIL = "admin@example.com"
+
+# wagtail configs
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+WAGTAIL_SITE_NAME = 'My Example Site'
+WAGTAILADMIN_BASE_URL = 'http://example.com'
+WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+
