@@ -144,6 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "pages:index"
 LOGOUT_REDIRECT_URL = "pages:index"
+SIGNUP_REDIRECT_URL = "pages:index"
 ACCOUNT_LOGOUT_REDIRECT = "pages:index" # django-allauth
 
 STATICFILES_DIRS = [BASE_DIR / "static"]

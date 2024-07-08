@@ -211,7 +211,7 @@
 - edit the domain name in admin interface sites section
 - update the DEFAULT_FROM_EMAIL
 - sign up a new user to see the effects
-- PROBLEM 02: Email confirm page raises 404 error
+- PROBLEM 02: Email confirm page raises 404 error [FIXED]
 - add email_confirm.html to templates/account
 - check the urls for password reset and password change
 - http://127.0.0.1:8000/accounts/password/reset/
@@ -221,3 +221,15 @@
 - in the next chapter, i will try to integrate wagtail cms (instead of book app)
 - and fix the email confirm problem
 - commit
+
+
+- FIXING PROBLEM 02:
+- found the problem, somehow there is an extra forward slash at the end of the...
+- confirmation url
+- need to find it in email_confirm.html and remove it
+- weird, all forward slashes are just closing html tags, there is no extra slash to cause this issue
+- FOUND IT, the problem was in email_confirmation_message.txt
+- right after {{ activate_url }}
+- there was an extra slash
+- removing it fixed the problem
+- commiting

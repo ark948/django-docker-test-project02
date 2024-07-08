@@ -10,7 +10,7 @@
     {% if confirmation %}
         {% user_display confirmation.email_address.user as user_display %}
         <p>{% blocktrans with confirmation.email_address.email as email %}
-            لطفا تایید کنید <a href="mailto:{{ email }}">{{ email }}</a> آدرس ایمیل برای کاربر \
+            لطفا تایید کنید <a href="mailto:{{ email }}">{{ email }}</a> آدرس ایمیل برای کاربر
             {{ user_display }}.{% endblocktrans %}
             می باشد.
         </p>
@@ -23,7 +23,7 @@
         <p>
             {% blocktrans %}
             لینک تایید صحیح نمی باشد.
-            لطفا <a href="{{ email_url }}">یک ایمیل جدید درخواست کنید</a>.\
+            لطفا <a href="{{ email_url }}">یک ایمیل جدید درخواست کنید</a>.
             {% endblocktrans %}
         </p>
     {% endif %}
