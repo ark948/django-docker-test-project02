@@ -202,3 +202,22 @@
 - so i will not change it
 - right now, DATABASE config var is pointing to 'db' service in docker-compose which is good
 - commit
+
+
+- EMAIL
+- mkdir templates/account/email
+- create two new files in it: email_confirmation_subject.txt
+- and email_confirmation_message.txt
+- edit the domain name in admin interface sites section
+- update the DEFAULT_FROM_EMAIL
+- sign up a new user to see the effects
+- PROBLEM 02: Email confirm page raises 404 error
+- add email_confirm.html to templates/account
+- check the urls for password reset and password change
+- http://127.0.0.1:8000/accounts/password/reset/
+- http://127.0.0.1:8000/accounts/password/change/
+- password reset is working fine, just needs polishing
+- password change is also working fine, but is ugly
+- in the next chapter, i will try to integrate wagtail cms (instead of book app)
+- and fix the email confirm problem
+- commit
