@@ -1,0 +1,2 @@
+- PROBLEM 01: intermediary logout page not displaying => FIXED - in ADVANCED AUTHENTICATION
+- PROBLEM 02: Email confirm page raises 404 error [FIXED] - in EMAIL

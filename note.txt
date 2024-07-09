@@ -268,3 +268,7 @@
 - i'm going to use them both
 - i will move wagtail itself to wagtail-blog url and puput to puput-blog url
 - this note file is getting long and impractical (CLEAN LATER)
+
+- PROBLEM 03: requirements.txt not updating and how to delete whl file from repo...
+- without breaking project
+- going to manually add dependencies to requirements.txt
