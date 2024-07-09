@@ -64,6 +64,13 @@ COPY ./whl/telepath-0.3.1-py38-none-any.whl ./whl
 COPY ./whl/laces-0.1.1-py3-none-any.whl ./whl
 COPY ./whl/pillow_heif-0.17.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl ./whl
 COPY ./whl/wagtail-6.1.2-py3-none-any.whl ./whl
+# Puput
+COPY ./whl/django_el_pagination-4.0.0-py2.py3-none-any.whl ./whl
+COPY ./whl/webencodings-0.5.1-py2.py3-none-any.whl ./whl
+COPY ./whl/bleach-4.1.0-py2.py3-none-any.whl ./whl
+COPY ./whl/Markdown-3.6-py3-none-any.whl ./whl
+COPY ./whl/wagtail_markdown-0.11.1-py3-none-any.whl ./whl
+COPY ./whl/puput-2.1.1-py3-none-any.whl ./whl
 RUN pip install ./whl/typing_extensions-4.12.2-py3-none-any.whl
 RUN pip install ./whl/asgiref-3.8.1-py3-none-any.whl
 RUN pip install ./whl/sqlparse-0.5.0-py3-none-any.whl
@@ -115,6 +122,12 @@ RUN pip install ./whl/telepath-0.3.1-py38-none-any.whl
 RUN pip install ./whl/laces-0.1.1-py3-none-any.whl
 RUN pip install ./whl/pillow_heif-0.17.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 RUN pip install ./whl/wagtail-6.1.2-py3-none-any.whl
+RUN pip install ./whl/django_el_pagination-4.0.0-py2.py3-none-any.whl
+RUN pip install ./whl/webencodings-0.5.1-py2.py3-none-any.whl
+RUN pip install ./whl/bleach-4.1.0-py2.py3-none-any.whl
+RUN pip install ./whl/Markdown-3.6-py3-none-any.whl
+RUN pip install ./whl/wagtail_markdown-0.11.1-py3-none-any.whl
+RUN pip install ./whl/puput-2.1.1-py3-none-any.whl
 RUN pip freeze > requirements.txt
 
 # copy project

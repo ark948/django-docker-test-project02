@@ -30,9 +30,10 @@ urlpatterns = [
     path("", include("pages.urls")),
 
     # wagtail
-    path('wgt/cms/', include(wagtailadmin_urls)),
-    path('wgt/documents/', include(wagtaildocs_urls)),
-    path('wgt/pages/', include(wagtail_urls)),
+    # path('wgt/cms/', include(wagtailadmin_urls)),
+    # path('wgt/documents/', include(wagtaildocs_urls)),
+    # path('wgt/pages/', include(wagtail_urls)),
+    path(r'', include('puput.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

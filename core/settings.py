@@ -49,25 +49,33 @@ INSTALLED_APPS = [
     "allauth",  # needed for allauth
     "allauth.account",  # needed for allauth
     # Wagtail
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail',
+    # 'wagtail.contrib.legacy.richtext',
+    # 'wagtail.contrib.forms',
+    # 'wagtail.contrib.sitemaps'
+    # 'wagtail.contrib.routable_page',
+    # 'wagtail.contrib.redirects',
+    # 'wagtail.embeds',
+    # 'wagtail.sites',
+    # 'wagtail.users',
+    # 'wagtail.snippets',
+    # 'wagtail.documents',
+    # 'wagtail.images',
+    # 'wagtail.search',
+    # 'wagtail.admin',
+    # 'wagtail',
 
-    'modelcluster',
-    'taggit',
+    # 'modelcluster',
+    # 'taggit',
+
+    # Puput
 
     # local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
 ]
+
+from puput import PUPUT_APPS
+INSTALLED_APPS += PUPUT_APPS
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
@@ -194,7 +202,7 @@ DEFAULT_FROM_EMAIL = "admin@example.com"
 # wagtail configs
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-WAGTAIL_SITE_NAME = 'My Example Site'
-WAGTAILADMIN_BASE_URL = 'http://example.com'
+WAGTAIL_SITE_NAME = 'djangomyblog'
+WAGTAILADMIN_BASE_URL = 'http://localhost:8000/'
 WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
 

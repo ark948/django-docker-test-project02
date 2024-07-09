@@ -235,7 +235,7 @@
 - commiting
 
 
-- ADDING wagtail (MAIN FUNCTION)
+- ADDING Wagtail (MAIN FUNCTION)
 - GOAL: to use wagtail as blogging platform
 - users must be able to sign up, confirm their email
 - create new blogs with editing features and hashtags
@@ -272,3 +272,31 @@
 - PROBLEM 03: requirements.txt not updating and how to delete whl file from repo...
 - without breaking project
 - going to manually add dependencies to requirements.txt
+
+
+- ADDING Puput (Single blog app on top of wagtail)
+- pip install puput and its dependencies
+- add apps listed in puput's documentation
+- add wagtail middleware
+- add something called request context processor to TEMPLATES var (already present)
+- set wagtail_site_name to the name of your website
+- set wagtailadmin_base_url to the name of your website
+- configure MEDIA_ROOT and MEDIA_URL
+- place puput's urls at the bottom of the urlpatterns, it also includes wagtails urls
+- the word 'bottom' was bold in documentation
+- (i will remove wagtail urls for now)
+- make urls.py file to server static files by updating urlpatterns
+- file/image chapter of book seems very useful here
+- run migrate and ...
+- python manage.py puput_initial_data to laod initial data
+- open browser at localhost/blog/ to view blog home page
+- localhost/blog_admin/ to view admin stie and edit documents
+- let's convert commands to docker commands
+> docker-compose exec web python manage.py migrate
+> docker-compose exec web python manage.py puput_initial_data
+- no problem so far...
+- restarting
+- setup is complete. blog loads without problem
+- RESULTS: puput is successfully added, but it's better for single user blogs for me
+- not a blogging platform for everyone to post on
+- i will try to implement my own blog app, then work wagtail out
